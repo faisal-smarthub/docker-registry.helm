@@ -183,7 +183,11 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
   secret:
     secretName: {{ template "docker-registry.fullname" . }}-secret
     items:
+    {{- if eq .Values.secrets.htpasswd "secret-generator" }}
+    - key: auth
+    {{- else }}
     - key: htpasswd
+    {{- end }}
       path: htpasswd
 {{- end }}
 
