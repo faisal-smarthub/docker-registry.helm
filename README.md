@@ -1,4 +1,5 @@
 # Docker Registry Helm Chart
+This fork adds support for secret auto-generation for both htaccess client secrets.
 
 This directory contains a Kubernetes chart to deploy a private Docker Registry.
 
